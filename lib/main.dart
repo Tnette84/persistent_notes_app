@@ -83,6 +83,20 @@ final ValueChanged<bool> onThemeChanged;
 
 class _MyHomePageState extends State<MyHomePage> {
  final TextEditingController _noteController = TextEditingController();
+ Future<void> _loadNote() async {
+  final directory = await getApplicationDocumentsDirectory();
+  final file = File('${directory.path}/notes.txt');
+
+  if (await file.exists()) {
+    final savedNote = await file.readAsString();
+
+    if (!mounted) return;
+
+    setState(() {
+      _noteController.text = savedNote;
+    });
+  }
+}
 
 Future<void> _saveNote() async {
   final directory = await getApplicationDocumentsDirectory();
@@ -111,6 +125,11 @@ void dispose() {
       _counter++;
     });
   }
+@override
+void initState() {
+  super.initState();
+  _loadNote();
+}
 
   @override
   Widget build(BuildContext context) {

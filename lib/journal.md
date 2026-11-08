@@ -7,3 +7,7 @@ In this phase, I added the shared_preferences package to save the Dark Mode sett
 ## Phase 2: File Storage
 
 In this phase, I added the path_provider package and created a text field and Save Note button. I used Dart file operations to save notes to a local text file. I tested the app and confirmed that the saved note appeared in the terminal.
+
+## Phase 3: Restoring Saved Notes
+
+In this phase, I added a method to load saved notes when the app starts. I used fileExists checking to prevent errors if the file is missing. I tested the app and confirmed that my saved note appeared automatically after reopening it.
