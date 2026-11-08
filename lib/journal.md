@@ -11,3 +11,7 @@ In this phase, I added the path_provider package and created a text field and Sa
 ## Phase 3: Restoring Saved Notes
 
 In this phase, I added a method to load saved notes when the app starts. I used fileExists checking to prevent errors if the file is missing. I tested the app and confirmed that my saved note appeared automatically after reopening it.
+
+## Phase 4: Final Testing and Validation
+
+In this phase, I tested the Dark Mode switch, saved preferences, note saving, and automatic note loading. The application ran successfully on Windows, and the saved settings and notes were restored after restarting the app.
